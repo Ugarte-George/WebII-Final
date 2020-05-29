@@ -1,0 +1,30 @@
+#section-1 {
+
+    .container1{
+    display: grid;
+    width: 100%;
+    padding-top: 0px;
+    grid-template-columns: 45px auto 45px;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: 
+
+        " ABOUT ABOUT1 ABOUT"
+        " AB PA BO  ";
+
+        >div {
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+
+    .aboutus {
+        grid-area: ABOUT1;
+        grid-column-end:  ABOUT1 span;
+        height: 0px;
+        display: flex;
+        align-content: center;
+        text-align: center;
+        background-size: cover;
+        background-image: url('../img/icons/Divider.svg');
+        background-repeat: none;
+    }
+}

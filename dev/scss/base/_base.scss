@@ -2,4 +2,45 @@
     Base
 ============= */
 
+a{
+    text-decoration: none;
+    transition: 0.25s;
+    width: 55px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li{
+        list-style: none;
+    }
+}
+
+.show-for-medium{
+    display: none;
+    @include md{
+        display: block;
+    }
+}
+
+.show-for-large{
+    display: none;
+    @include lg{
+        display: block;
+    }
+}
+
+.show-for-lg{
+    display: none;
+    @include lg{
+        display: block !important;
+    }
+}
+
+li {
+    display: inline;
+}
+
+
 

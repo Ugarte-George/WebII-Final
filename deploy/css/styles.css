@@ -9,7 +9,7 @@ html {
 /* =============
     Variables
 ============= */
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -29,6 +29,12 @@ html {
  */
 body {
   margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -311,6 +317,35 @@ template {
 /* =============
     Base
 ============= */
+a {
+  text-decoration: none;
+  transition: 0.25s;
+  width: 55px; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+  ul li {
+    list-style: none; }
+
+.show-for-medium {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-for-medium {
+      display: block; } }
+.show-for-large {
+  display: none; }
+  @media (min-width: 992px) {
+    .show-for-large {
+      display: block; } }
+.show-for-lg {
+  display: none; }
+  @media (min-width: 992px) {
+    .show-for-lg {
+      display: block !important; } }
+li {
+  display: inline; }
+
 /* =============
     Typography
 ============= */
@@ -338,6 +373,86 @@ textarea {
 /* =============
     Header
 ============= */
+header .container {
+  display: grid;
+  width: 100%;
+  height: 1000px;
+  padding-bottom: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 958 42;
+  grid-template-areas: "title title title3" " UI UI UI "; }
+  header .container > div {
+    font-family: 'Roboto',sans-serif; }
+
+header .title {
+  grid-area: title3;
+  padding: 50px 50px 50px 50px;
+  font-weight: bolder;
+  font-size: 100px;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  padding-left: 800px; }
+
+header .image {
+  grid-area: title3;
+  grid-column-start: title;
+  display: flex;
+  background-image: url("../img/header/header-hero.jpg");
+  background-position: left;
+  background-size: cover; }
+
+header .UI {
+  grid-area: UI; }
+  header .UI > div {
+    background-color: #0168B3;
+    color: #000;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: UI;
+    font-size: 18px;
+    font-weight: bold; }
+    header .UI > div a:link,
+    header .UI > div a:visited {
+      background-color: #E52237;
+      border-radius: 25px;
+      border-color: #fff;
+      border-style: solid;
+      margin: 5px;
+      display: inline-block;
+      color: #fff;
+      padding: 5px 25px;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold; }
+    header .UI > div a:hover,
+    header .UI > div a:active {
+      background-color: #fff;
+      color: #E52237; }
+
 /* =============
     Footer
 ============= */
+#section-1 .container1 {
+  display: grid;
+  width: 100%;
+  padding-top: 0px;
+  grid-template-columns: 45px auto 45px;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: " ABOUT ABOUT1 ABOUT" " AB PA BO  "; }
+  #section-1 .container1 > div {
+    font-family: 'Roboto', sans-serif; }
+
+#section-1 .aboutus {
+  grid-area: ABOUT1;
+  grid-column-end: ABOUT1 span;
+  height: 0px;
+  display: flex;
+  align-content: center;
+  text-align: center;
+  background-size: cover;
+  background-image: url("../img/icons/Divider.svg");
+  background-repeat: none; }
