@@ -1,26 +1,93 @@
 header {
     .container {
+        font-family: 'Roboto', sans-serif;
         padding-bottom: 100px;
         display: grid;
         width: 100%;
         height: 500px;
-        grid-template-columns: 1fr 500px 1fr;
+        grid-template-columns: 100%;
         grid-template-rows: 1fr 42px;
         grid-template-areas: 
     
-              ". pup ."
-              "ui ui ui";
+              " pup "
+              " ui ";
+
+              @media screen and (max-width: 800px) { 
+                height: 275px;
+              }
     }
 
     .pup {
         grid-area: pup;
-        text-align: center;
+        background-image: url('../img/header/header-hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-weight: bolder;
+        font-size: 60px;
+        color: $white;
+        text-align: right;
+        padding-left: 50%;
+        padding-right: 25px;
 
+        @media screen and (max-width: 800px) { 
+            font-size: 40px;
+            background-size: 100%;
+          }
+
+          @media screen and (min-width: 1200px) { 
+            font-size: 75px;
+          }
+
+          @media screen and (min-width: 1400px) { 
+            font-size: 90px;
+          }
+
+          @media screen and (min-width: 1600px) { 
+            font-size: 100px;
+          }
+        
     }
 
     .ui {
         grid-area: ui;
-        text-align: center;
+        background-color: $Pblue;
+
+            >div {
+                background-color: $Pblue;
+                color: $black;
+                border-radius: 4px;
+                display: flex; //allows for centered text
+                justify-content: center; //centers text horizontally
+                align-items: center; //centers text vertically
+                grid-area: UI;
+                font-size: 18px;
+                font-weight: bold;
+
+                a:link,
+                a:visited {
+                    
+                    background-color: $Pred;
+                    border-radius: 25px;
+                    border-color: $white;
+                    border-style: solid;
+                    margin: 5px;
+                    display: inline-block;
+                    color: $white;
+                    padding: 5px 25px;
+                    text-decoration: none;
+                    text-align: center;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: bold;
+
+            }
+
+            a:hover,
+            a:active {
+
+            background-color: $white;
+            color: $Pred;
+
+            }
     }
 
     .item {
@@ -28,4 +95,5 @@ header {
         justify-content: center; //centers text horizontally
         align-items: center; //centers text vertically
       }
-}
+    }
+}   

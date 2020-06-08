@@ -8,13 +8,13 @@ footer {
         width: 100%;
         height: 500px;
         grid-gap: 2rem;
-        grid-template-columns: 50px 1fr 1fr 1fr 50px; //defines the sizes of the columns
-        grid-template-rows:  400px 100px 1fr 1fr; //defines sizes of rows
+        grid-template-columns: 100%; //defines the sizes of the columns
+        grid-template-rows:  400px 100px 1fr; //defines sizes of rows
         grid-template-areas: 
 
-            " . ftop ftop ftop . "
-            " . fmid fmid fmid . "
-            " fbot fbot fbot fbot fbot ";
+            " ftop "
+            " fmid "
+            " fbot ";
 
     }
 
@@ -27,6 +27,7 @@ footer {
 
         @media screen and (max-width: 500px) { 
             background-size: 100%;
+            
           }
 
     }
@@ -80,6 +81,11 @@ footer {
                 font-weight: lighter;
                 padding-left: 50px;
                 align-items: center; //centers text vertically
+
+                @media screen and (max-width: 700px) { 
+                    font-size: 10px;
+                    
+                  }
                 
             }
 

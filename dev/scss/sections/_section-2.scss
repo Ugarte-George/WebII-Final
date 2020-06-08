@@ -4,15 +4,19 @@
         display: grid;
         width: 100%;
         height: 1000px;
-        grid-template-columns: 50px 1fr 450px 1fr 50px; //defines the sizes of the columns
+        grid-template-columns: 1fr 450px 1fr; //defines the sizes of the columns
         grid-template-rows:  400px 1fr 1fr 1fr 100px; //defines sizes of rows
         grid-template-areas: 
 
-            " divider divider divider divider divider "
-            " . interface interface interface . "
-            " .  loli loli loli . "
-            " . ika ika ika . "
-            " . . load . . ";
+            "  divider divider divider  "
+            "  interface interface interface  "
+            "  loli loli loli  "
+            "  ika ika ika  "
+            "  . load .  ";
+
+            @media screen and (max-width: 1200px) { 
+                grid-template-rows:  200px 1fr 1fr 1fr 100px; //defines sizes of rows
+              }
 
     }
 

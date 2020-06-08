@@ -3,16 +3,22 @@
         font-family: 'Roboto', sans-serif;
         display: grid;
         width: 100%;
-        height: 1900px;
-        grid-template-columns: 50px 1fr 450px 1fr 50px; //defines the sizes of the columns
-        grid-template-rows:  400px 1fr 1fr 1fr 1fr; //defines sizes of rows
+        height: 2000px;
+        grid-template-columns: 1fr 450px 1fr; //defines the sizes of the columns
+        grid-template-rows:  400px 1fr 1fr 1fr 1fr 1fr 1fr; //defines sizes of rows
         grid-template-areas: 
 
-            " divider divider divider divider divider "
-            " . . adopt . . "
-            " . . donate . . "
-            " . . picme . . "
-            " pimg pimg pimg pimg pimg ";
+            " divider divider divider "
+            " . adopt .  "
+            " . b1 .  "
+            " . donate . "
+            " . b2 .  "
+            " . picme . "
+            " pimg pimg pimg ";
+
+            @media screen and (max-width: 1200px) { 
+                grid-template-rows:  200px 1fr 1fr 1fr 1fr 1fr 1fr; //defines sizes of rows
+              }
 
     }
 
@@ -33,7 +39,6 @@
 
     .adopt {
         grid-area: adopt;
-        border-bottom: $Pred solid 4px;
         text-align: center;
         font-size: remcalc(20);
 
@@ -43,14 +48,25 @@
         
     }
 
+    .b1 {
+        grid-area: b1;
+        border-bottom: $Pred solid 4px;
+        
+    }
+
     .donate {
         grid-area: donate;
-        border-bottom: $Pred solid 4px;
         text-align: center;
 
         @media screen and (max-width: 1200px) { 
             font-size: 16px;
           }
+        
+    }
+
+    .b2 {
+        grid-area: b2;
+        border-bottom: $Pred solid 4px;
         
     }
 
@@ -93,5 +109,10 @@
         padding: 15px 32px;
 
     }
+
+    .button:hover {
+        background-color: $Pred;
+        color: white;
     
+    }
 }

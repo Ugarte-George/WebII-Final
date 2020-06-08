@@ -371,26 +371,76 @@ textarea {
     Navigation
 ============= */
 header .container {
+  font-family: 'Roboto', sans-serif;
   padding-bottom: 100px;
   display: grid;
   width: 100%;
   height: 500px;
-  grid-template-columns: 1fr 500px 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: 1fr 42px;
-  grid-template-areas: ". pup ." "ui ui ui"; }
-
+  grid-template-areas: " pup " " ui "; }
+  @media screen and (max-width: 800px) {
+    header .container {
+      height: 275px; } }
 header .pup {
   grid-area: pup;
-  text-align: center; }
-
+  background-image: url("../img/header/header-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  font-size: 60px;
+  color: #fff;
+  text-align: right;
+  padding-left: 50%;
+  padding-right: 25px; }
+  @media screen and (max-width: 800px) {
+    header .pup {
+      font-size: 40px;
+      background-size: 100%; } }
+  @media screen and (min-width: 1200px) {
+    header .pup {
+      font-size: 75px; } }
+  @media screen and (min-width: 1400px) {
+    header .pup {
+      font-size: 90px; } }
+  @media screen and (min-width: 1600px) {
+    header .pup {
+      font-size: 100px; } }
 header .ui {
   grid-area: ui;
-  text-align: center; }
-
-header .item {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  background-color: #0168B3; }
+  header .ui > div {
+    background-color: #0168B3;
+    color: #000;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: UI;
+    font-size: 18px;
+    font-weight: bold; }
+    header .ui > div a:link,
+    header .ui > div a:visited {
+      background-color: #E52237;
+      border-radius: 25px;
+      border-color: #fff;
+      border-style: solid;
+      margin: 5px;
+      display: inline-block;
+      color: #fff;
+      padding: 5px 25px;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold; }
+    header .ui > div a:hover,
+    header .ui > div a:active {
+      background-color: #fff;
+      color: #E52237; }
+  header .ui .item {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 /* =============
     Footer
@@ -401,9 +451,9 @@ footer .container {
   width: 100%;
   height: 500px;
   grid-gap: 2rem;
-  grid-template-columns: 50px 1fr 1fr 1fr 50px;
-  grid-template-rows: 400px 100px 1fr 1fr;
-  grid-template-areas: " . ftop ftop ftop . " " . fmid fmid fmid . " " fbot fbot fbot fbot fbot "; }
+  grid-template-columns: 100%;
+  grid-template-rows: 400px 100px 1fr;
+  grid-template-areas: " ftop " " fmid " " fbot "; }
 
 footer .ftop {
   grid-area: ftop;
@@ -447,16 +497,20 @@ footer .fbot {
     font-weight: lighter;
     padding-left: 50px;
     align-items: center; }
-
+    @media screen and (max-width: 700px) {
+      footer .fbot > div {
+        font-size: 10px; } }
 #section-1 .container {
   font-family: 'Roboto', sans-serif;
   display: grid;
   width: 100%;
-  height: 1500px;
-  grid-template-columns: 50px 1fr 450px 1fr 50px;
-  grid-template-rows: 400px 400px 2fr 3fr 1fr;
-  grid-template-areas: ". . cat . . " "divider divider divider divider divider " ". . body . ." ". where where where . " ". . search . . "; }
-
+  height: 1800px;
+  grid-template-columns: 1fr 450px 1fr;
+  grid-template-rows: 400px 400px 2fr 3fr 1fr 50px;
+  grid-template-areas: " . cat .  " "divider divider divider " " . body . " " . where .  " " . search .  " " . iconz .  "; }
+  @media screen and (max-width: 1200px) {
+    #section-1 .container {
+      grid-template-rows: 400px 200px 2fr 3fr 1fr; } }
 #section-1 .cat {
   grid-area: cat;
   background-image: url("../img/section-1/AdoptCat.png");
@@ -492,6 +546,13 @@ footer .fbot {
   text-align: center;
   font-weight: bold; }
 
+#section-1 .iconz {
+  grid-area: iconz;
+  background-image: url("../img/icons/Search.svg");
+  background-size: 10%;
+  background-repeat: no-repeat;
+  align-content: center; }
+
 #section-1 .item {
   display: flex;
   justify-content: center;
@@ -502,10 +563,12 @@ footer .fbot {
   display: grid;
   width: 100%;
   height: 1000px;
-  grid-template-columns: 50px 1fr 450px 1fr 50px;
+  grid-template-columns: 1fr 450px 1fr;
   grid-template-rows: 400px 1fr 1fr 1fr 100px;
-  grid-template-areas: " divider divider divider divider divider " " . interface interface interface . " " .  loli loli loli . " " . ika ika ika . " " . . load . . "; }
-
+  grid-template-areas: "  divider divider divider  " "  interface interface interface  " "  loli loli loli  " "  ika ika ika  " "  . load .  "; }
+  @media screen and (max-width: 1200px) {
+    #section-2 .container {
+      grid-template-rows: 200px 1fr 1fr 1fr 100px; } }
 #section-2 .divider {
   grid-area: divider;
   text-align: center;
@@ -539,11 +602,13 @@ footer .fbot {
   font-family: 'Roboto', sans-serif;
   display: grid;
   width: 100%;
-  height: 1900px;
-  grid-template-columns: 50px 1fr 450px 1fr 50px;
-  grid-template-rows: 400px 1fr 1fr 1fr 1fr;
-  grid-template-areas: " divider divider divider divider divider " " . . adopt . . " " . . donate . . " " . . picme . . " " pimg pimg pimg pimg pimg "; }
-
+  height: 2000px;
+  grid-template-columns: 1fr 450px 1fr;
+  grid-template-rows: 400px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: " divider divider divider " " . adopt .  " " . b1 .  " " . donate . " " . b2 .  " " . picme . " " pimg pimg pimg "; }
+  @media screen and (max-width: 1200px) {
+    #section-3 .container {
+      grid-template-rows: 200px 1fr 1fr 1fr 1fr 1fr 1fr; } }
 #section-3 .divider {
   grid-area: divider;
   background-image: url("../img/icons/Divider.svg");
@@ -557,19 +622,25 @@ footer .fbot {
       font-size: 20px; } }
 #section-3 .adopt {
   grid-area: adopt;
-  border-bottom: #E52237 solid 4px;
   text-align: center;
   font-size: remcalc(20); }
   @media screen and (max-width: 1200px) {
     #section-3 .adopt {
       font-size: 16px; } }
+#section-3 .b1 {
+  grid-area: b1;
+  border-bottom: #E52237 solid 4px; }
+
 #section-3 .donate {
   grid-area: donate;
-  border-bottom: #E52237 solid 4px;
   text-align: center; }
   @media screen and (max-width: 1200px) {
     #section-3 .donate {
       font-size: 16px; } }
+#section-3 .b2 {
+  grid-area: b2;
+  border-bottom: #E52237 solid 4px; }
+
 #section-3 .picme {
   grid-area: picme;
   text-align: center; }
@@ -598,3 +669,7 @@ footer .fbot {
   border: #E52237 4px solid;
   border-radius: 30px;
   padding: 15px 32px; }
+
+#section-3 .button:hover {
+  background-color: #E52237;
+  color: white; }
