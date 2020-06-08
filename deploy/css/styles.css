@@ -370,89 +370,231 @@ textarea {
 /* =============
     Navigation
 ============= */
-/* =============
-    Header
-============= */
 header .container {
+  padding-bottom: 100px;
   display: grid;
   width: 100%;
-  height: 1000px;
-  padding-bottom: 50px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 958 42;
-  grid-template-areas: "title title title3" " UI UI UI "; }
-  header .container > div {
-    font-family: 'Roboto',sans-serif; }
+  height: 500px;
+  grid-template-columns: 1fr 500px 1fr;
+  grid-template-rows: 1fr 42px;
+  grid-template-areas: ". pup ." "ui ui ui"; }
 
-header .title {
-  grid-area: title3;
-  padding: 50px 50px 50px 50px;
-  font-weight: bolder;
-  font-size: 100px;
-  color: #fff;
+header .pup {
+  grid-area: pup;
+  text-align: center; }
+
+header .ui {
+  grid-area: ui;
+  text-align: center; }
+
+header .item {
   display: flex;
-  text-align: center;
-  padding-left: 800px; }
-
-header .image {
-  grid-area: title3;
-  grid-column-start: title;
-  display: flex;
-  background-image: url("../img/header/header-hero.jpg");
-  background-position: left;
-  background-size: cover; }
-
-header .UI {
-  grid-area: UI; }
-  header .UI > div {
-    background-color: #0168B3;
-    color: #000;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: UI;
-    font-size: 18px;
-    font-weight: bold; }
-    header .UI > div a:link,
-    header .UI > div a:visited {
-      background-color: #E52237;
-      border-radius: 25px;
-      border-color: #fff;
-      border-style: solid;
-      margin: 5px;
-      display: inline-block;
-      color: #fff;
-      padding: 5px 25px;
-      text-decoration: none;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold; }
-    header .UI > div a:hover,
-    header .UI > div a:active {
-      background-color: #fff;
-      color: #E52237; }
+  justify-content: center;
+  align-items: center; }
 
 /* =============
     Footer
 ============= */
-#section-1 .container1 {
+footer .container {
+  font-family: 'Roboto', sans-serif;
   display: grid;
   width: 100%;
-  padding-top: 0px;
-  grid-template-columns: 45px auto 45px;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas: " ABOUT ABOUT1 ABOUT" " AB PA BO  "; }
-  #section-1 .container1 > div {
-    font-family: 'Roboto', sans-serif; }
+  height: 500px;
+  grid-gap: 2rem;
+  grid-template-columns: 50px 1fr 1fr 1fr 50px;
+  grid-template-rows: 400px 100px 1fr 1fr;
+  grid-template-areas: " . ftop ftop ftop . " " . fmid fmid fmid . " " fbot fbot fbot fbot fbot "; }
 
-#section-1 .aboutus {
-  grid-area: ABOUT1;
-  grid-column-end: ABOUT1 span;
-  height: 0px;
-  display: flex;
-  align-content: center;
-  text-align: center;
+footer .ftop {
+  grid-area: ftop;
+  background-image: url("../img/footer/Petsmart_Charities.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%; }
+  @media screen and (max-width: 500px) {
+    footer .ftop {
+      background-size: 100%; } }
+footer .fmid {
+  grid-area: fmid; }
+  footer .fmid > div {
+    border-radius: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    footer .fmid > div a:link,
+    footer .fmid > div a:visited {
+      background-color: #E52237;
+      border-radius: 200px;
+      border-color: #fff;
+      border-style: solid;
+      margin: 10px;
+      display: inline-block;
+      color: #fff;
+      padding: 8px 11px; }
+    footer .fmid > div a:hover,
+    footer .fmid > div a:active {
+      background-color: #fff;
+      border-color: #E52237;
+      border-style: solid;
+      border-width: 4px; }
+
+footer .fbot {
+  grid-area: fbot;
+  background-color: #0168B3;
+  background-size: cover; }
+  footer .fbot > div {
+    color: #fff;
+    font-weight: lighter;
+    padding-left: 50px;
+    align-items: center; }
+
+#section-1 .container {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  width: 100%;
+  height: 1500px;
+  grid-template-columns: 50px 1fr 450px 1fr 50px;
+  grid-template-rows: 400px 400px 2fr 3fr 1fr;
+  grid-template-areas: ". . cat . . " "divider divider divider divider divider " ". . body . ." ". where where where . " ". . search . . "; }
+
+#section-1 .cat {
+  grid-area: cat;
+  background-image: url("../img/section-1/AdoptCat.png");
   background-size: cover;
+  background-repeat: no-repeat; }
+
+#section-1 .divider {
+  grid-area: divider;
+  text-align: center;
   background-image: url("../img/icons/Divider.svg");
-  background-repeat: none; }
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  font-size: 48px;
+  color: #fff; }
+  @media screen and (max-width: 1200px) {
+    #section-1 .divider {
+      font-size: 20px; } }
+#section-1 .body {
+  grid-area: body;
+  text-align: center;
+  font-size: remcalc(20); }
+  @media screen and (max-width: 1200px) {
+    #section-1 .body {
+      font-size: 16px; } }
+#section-1 .where {
+  grid-area: where;
+  text-align: center;
+  border: #E52237 4px solid; }
+
+#section-1 .search {
+  grid-area: search;
+  text-align: center;
+  font-weight: bold; }
+
+#section-1 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#section-2 .container {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  width: 100%;
+  height: 1000px;
+  grid-template-columns: 50px 1fr 450px 1fr 50px;
+  grid-template-rows: 400px 1fr 1fr 1fr 100px;
+  grid-template-areas: " divider divider divider divider divider " " . interface interface interface . " " .  loli loli loli . " " . ika ika ika . " " . . load . . "; }
+
+#section-2 .divider {
+  grid-area: divider;
+  text-align: center;
+  background-image: url("../img/icons/Divider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  font-size: 48px;
+  color: #fff; }
+  @media screen and (max-width: 1200px) {
+    #section-2 .divider {
+      font-size: 20px; } }
+#section-2 .interface {
+  grid-area: interface; }
+
+#section-2 .loli {
+  grid-area: loli; }
+
+#section-2 .ika {
+  grid-area: ika; }
+
+#section-2 .load {
+  grid-area: load; }
+
+#section-2 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#section-3 .container {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  width: 100%;
+  height: 1900px;
+  grid-template-columns: 50px 1fr 450px 1fr 50px;
+  grid-template-rows: 400px 1fr 1fr 1fr 1fr;
+  grid-template-areas: " divider divider divider divider divider " " . . adopt . . " " . . donate . . " " . . picme . . " " pimg pimg pimg pimg pimg "; }
+
+#section-3 .divider {
+  grid-area: divider;
+  background-image: url("../img/icons/Divider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  font-size: 48px;
+  color: #fff; }
+  @media screen and (max-width: 1200px) {
+    #section-3 .divider {
+      font-size: 20px; } }
+#section-3 .adopt {
+  grid-area: adopt;
+  border-bottom: #E52237 solid 4px;
+  text-align: center;
+  font-size: remcalc(20); }
+  @media screen and (max-width: 1200px) {
+    #section-3 .adopt {
+      font-size: 16px; } }
+#section-3 .donate {
+  grid-area: donate;
+  border-bottom: #E52237 solid 4px;
+  text-align: center; }
+  @media screen and (max-width: 1200px) {
+    #section-3 .donate {
+      font-size: 16px; } }
+#section-3 .picme {
+  grid-area: picme;
+  text-align: center; }
+  @media screen and (max-width: 1200px) {
+    #section-3 .picme {
+      font-size: 16px; } }
+#section-3 .pimg {
+  grid-area: pimg;
+  background-image: url("../img/section-3/PicMe.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 1000px; }
+  @media screen and (max-width: 1000px) {
+    #section-3 .pimg {
+      height: 500px; } }
+#section-3 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#section-3 .button {
+  color: #E52237;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+  border: #E52237 4px solid;
+  border-radius: 30px;
+  padding: 15px 32px; }

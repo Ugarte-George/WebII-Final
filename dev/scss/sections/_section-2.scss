@@ -1,0 +1,55 @@
+#section-2 {
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: grid;
+        width: 100%;
+        height: 1000px;
+        grid-template-columns: 50px 1fr 450px 1fr 50px; //defines the sizes of the columns
+        grid-template-rows:  400px 1fr 1fr 1fr 100px; //defines sizes of rows
+        grid-template-areas: 
+
+            " divider divider divider divider divider "
+            " . interface interface interface . "
+            " .  loli loli loli . "
+            " . ika ika ika . "
+            " . . load . . ";
+
+    }
+
+    .divider {
+        grid-area: divider;
+        text-align: center;
+        background-image: url('../img/icons/Divider.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        font-weight: bolder;
+        font-size: 48px;
+        color: $white;
+
+        @media screen and (max-width: 1200px) { 
+            font-size: 20px;
+          }
+    }
+
+    .interface {
+        grid-area: interface;
+    }
+
+    .loli {
+        grid-area: loli;
+    }
+
+    .ika {
+        grid-area: ika;
+    }
+
+    .load {
+        grid-area: load;
+    }
+
+    .item {
+        display: flex; //allows for centered text
+        justify-content: center; //centers text horizontally
+        align-items: center; //centers text vertically
+      }
+}

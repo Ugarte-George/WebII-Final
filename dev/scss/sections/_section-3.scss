@@ -1,0 +1,97 @@
+#section-3 {
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: grid;
+        width: 100%;
+        height: 1900px;
+        grid-template-columns: 50px 1fr 450px 1fr 50px; //defines the sizes of the columns
+        grid-template-rows:  400px 1fr 1fr 1fr 1fr; //defines sizes of rows
+        grid-template-areas: 
+
+            " divider divider divider divider divider "
+            " . . adopt . . "
+            " . . donate . . "
+            " . . picme . . "
+            " pimg pimg pimg pimg pimg ";
+
+    }
+
+
+    .divider {
+        grid-area: divider;
+        background-image: url('../img/icons/Divider.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        font-weight: bolder;
+        font-size: 48px;
+        color: $white;
+
+        @media screen and (max-width: 1200px) { 
+            font-size: 20px;
+          }
+    }
+
+    .adopt {
+        grid-area: adopt;
+        border-bottom: $Pred solid 4px;
+        text-align: center;
+        font-size: remcalc(20);
+
+        @media screen and (max-width: 1200px) { 
+            font-size: 16px;
+          }
+        
+    }
+
+    .donate {
+        grid-area: donate;
+        border-bottom: $Pred solid 4px;
+        text-align: center;
+
+        @media screen and (max-width: 1200px) { 
+            font-size: 16px;
+          }
+        
+    }
+
+    .picme {
+        grid-area: picme;
+        text-align: center;
+
+        @media screen and (max-width: 1200px) { 
+            font-size: 16px;
+          }
+    }
+
+    .pimg {
+        grid-area: pimg;
+        background-image: url('../img/section-3/PicMe.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 1000px;
+
+        @media screen and (max-width: 1000px) { 
+            height: 500px;
+          }
+    }
+
+    
+
+    .item {
+        display: flex; //allows for centered text
+        justify-content: center; //centers text horizontally
+        align-items: center; //centers text vertically
+      }
+
+    .button {
+        color: $Pred;
+        text-align: center;
+        align-content: center;
+        font-weight: bold;
+        border: $Pred 4px solid;
+        border-radius: 30px;
+        padding: 15px 32px;
+
+    }
+    
+}
