@@ -504,13 +504,14 @@ footer .fbot {
   font-family: 'Roboto', sans-serif;
   display: grid;
   width: 100%;
-  height: 1800px;
+  height: 1400px;
+  grid-row-gap: 25px;
   grid-template-columns: 1fr 450px 1fr;
-  grid-template-rows: 400px 400px 2fr 3fr 1fr 50px;
-  grid-template-areas: " . cat .  " "divider divider divider " " . body . " " . where .  " " . search .  " " . iconz .  "; }
+  grid-template-rows: 400px 400px 1fr 1fr 50px;
+  grid-template-areas: " . cat .  " "divider divider divider " " . body . " " . where .  " " . iconz .  "; }
   @media screen and (max-width: 1200px) {
     #section-1 .container {
-      grid-template-rows: 400px 200px 2fr 3fr 1fr 50px; } }
+      grid-template-rows: 400px 200px 1fr 1fr 50px; } }
 #section-1 .cat {
   grid-area: cat;
   background-image: url("../img/section-1/AdoptCat.png");
@@ -538,13 +539,36 @@ footer .fbot {
       font-size: 16px; } }
 #section-1 .where {
   grid-area: where;
-  text-align: center;
-  border: #E52237 4px solid; }
+  border: #E52237 4px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25px 2fr 1fr;
+  grid-template-areas: "si1 si2 " "si1 si3 " "si4 si4 "; }
 
-#section-1 .search {
-  grid-area: search;
+#section-1 .si1 {
+  grid-area: si1;
+  background-image: url("../img/section-1/Location.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -60px; }
+
+#section-1 .si2 {
+  grid-area: si2;
+  padding: 20px 20px 20px 20px;
   text-align: center;
   font-weight: bold; }
+
+#section-1 .si3 {
+  grid-area: si3;
+  padding: 20px 20px 20px 20px;
+  text-align: center; }
+
+#section-1 .si4 {
+  grid-area: si4;
+  text-align: center;
+  font-weight: bold;
+  color: #0168B3;
+  padding-top: 25px; }
 
 #section-1 .iconz {
   grid-area: iconz; }
@@ -556,7 +580,7 @@ footer .fbot {
 
 #section-1 .button {
   border-radius: 45px;
-  padding: 1.5px 2px;
+  margin-bottom: 100px;
   background-repeat: no-repeat; }
 
 #section-2 {
