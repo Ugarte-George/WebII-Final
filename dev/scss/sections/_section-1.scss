@@ -16,7 +16,7 @@
           " . iconz .  ";
 
           @media screen and (max-width: 1200px) { 
-            grid-template-rows:  400px 200px 2fr 3fr 1fr; //defines sizes of rows
+            grid-template-rows:  400px 200px 2fr 3fr 1fr 50px; //defines sizes of rows
           }
         
       }
@@ -68,10 +68,7 @@
 
       .iconz {
         grid-area: iconz;
-        background-image: url('../img/icons/Search.svg');
-        background-size: 10%;
-        background-repeat: no-repeat;
-        align-content: center;
+    
       }
 
       .item {
@@ -79,4 +76,12 @@
         justify-content: center; //centers text horizontally
         align-items: center; //centers text vertically
       }
+
+      .button {
+        
+        border-radius: 45px;
+        padding: 1.5px 2px;
+        background-repeat: no-repeat;
+
+     }
 }

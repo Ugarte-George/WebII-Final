@@ -3,15 +3,16 @@
         font-family: 'Roboto', sans-serif;
         display: grid;
         width: 100%;
-        height: 1000px;
+        height: 2000px;
+        grid-row-gap: 50px;
         grid-template-columns: 1fr 450px 1fr; //defines the sizes of the columns
-        grid-template-rows:  400px 1fr 1fr 1fr 100px; //defines sizes of rows
+        grid-template-rows:  400px 300px 1fr 1fr 100px; //defines sizes of rows
         grid-template-areas: 
 
             "  divider divider divider  "
-            "  interface interface interface  "
-            "  loli loli loli  "
-            "  ika ika ika  "
+            "  . interface .  "
+            "  . loli .  "
+            "  . ika .  "
             "  . load .  ";
 
             @media screen and (max-width: 1200px) { 
@@ -29,6 +30,9 @@
         font-weight: bolder;
         font-size: 48px;
         color: $white;
+        display: flex; //allows for centered text
+        justify-content: center; //centers text horizontally
+        align-items: center; //centers text vertically
 
         @media screen and (max-width: 1200px) { 
             font-size: 20px;
@@ -36,24 +40,240 @@
     }
 
     .interface {
-        grid-area: interface;
+      grid-area: interface;
+      height: 200px;
+      border: $Pred 4px solid;
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas: 
+
+        "si9 si9-1 si10"
+        "si9 si9-1 si11";
+      
+    }
+
+    .si9 {
+      grid-area: si9;
+      display: flex;
+      justify-content: center; //centers text horizontally
+      align-items: center; //centers text vertically
+    }
+
+    .si9-1 {
+      grid-area: si9-1;
+      display: flex;
+      justify-content: center; //centers text horizontally
+      align-items: center; //centers text vertically
+    }
+    .si10 {
+      grid-area: si10;
+      text-align: center;
+      font-weight: bold;
+      padding-top: 25px;
+    }
+    .si11 {
+      grid-area: si11;
+      display: flex;
+      justify-content: center; //centers text horizontally
+      align-items: center; //centers text vertically
+
+    
     }
 
     .loli {
         grid-area: loli;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+
+          "si1 si2"
+          "si3 si4";
+    
+    }
+
+    .si1 {
+      grid-area: si1;
+      background-image: url('../img/section-2/Loli.jpg');
+      background-repeat: no-repeat;
+      background: cover;
+    }
+    .si2 {
+      grid-area: si2;
+      color: $Pblue;
+      text-align: left;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-top: $Pblue 4px solid;
+      border-right: $Pblue 4px solid;
+    }
+    .si3 {
+      grid-area: si3;
+      display: flex;
+      justify-content: center; //centers text horizontally
+      align-items: center; //centers text vertically
+
+    }
+    .si4 {
+      grid-area: si4;
+      background-color: $Pblue;
+      color: $white;
+      font-weight: bold;
+      padding-left: 20px;
     }
 
     .ika {
-        grid-area: ika;
+      grid-area: ika;
+      height: 400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 1fr;
+      grid-template-areas: 
+
+        "si5 si6"
+        "si7 si8";
+    }
+
+    .si5 {
+      grid-area: si5;
+      background-image: url('../img/section-2/Ika.jpg');
+      background-repeat: no-repeat;
+      background: cover;
+    }
+    .si6 {
+      grid-area: si6;
+      color: $Pblue;
+      text-align: left;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-top: $Pblue 4px solid;
+      border-right: $Pblue 4px solid;
+    }
+    .si7 {
+      grid-area: si7;
+      display: flex;
+      justify-content: center; //centers text horizontally
+      align-items: center; //centers text vertically
+
+    }
+    .si8 {
+      grid-area: si8;
+      background-color: $Pblue;
+      color: $white;
+      font-weight: bold;
+      padding-left: 20px;
     }
 
     .load {
         grid-area: load;
-    }
-
-    .item {
         display: flex; //allows for centered text
         justify-content: center; //centers text horizontally
         align-items: center; //centers text vertically
+    }
+
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
       }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 33px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .button {
+        color: $Pblue;
+        text-align: center;
+        align-content: center;
+        font-weight: bold;
+        border: $Pblue 4px solid;
+        border-radius: 30px;
+        padding: 5px 32px;
+
+    }
+
+    .button:hover {
+        background-color: $Pblue;
+        color: white;
+    
+    }
+
+    .button2 {
+      background-color: $Pblue;
+      color: $white;
+      text-align: center;
+      align-content: center;
+      font-weight: lighter;
+      border-radius: 30px;
+      padding: 5px 15px;
+
+  }
+
+  .button2:hover {
+      background-color: $white;
+      color: $Pblue;
+      border: 4px solid $Pblue;
+  
+  }
+
+  .button3 {
+        
+    padding: 1.5px 2px;
+    width: 75px;
+
+ }
+
 }
